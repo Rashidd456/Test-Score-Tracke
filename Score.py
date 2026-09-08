@@ -60,7 +60,7 @@ def get_average(name, subject):
                 return
             average = sum(students[name][subject]) / len(students[name][subject])
             average1 = round(average, 2)
-            st.write(f"Average percentage for {name} is {average1}")
+            st.write(f"Average percentage for {name} is {average1}%")
             if average1 >= 90 and average1 <= 100:
                 st.write("Letter grade: A")
             elif average1 >= 80 and average1 <= 89.99:
