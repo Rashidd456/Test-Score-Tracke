@@ -28,24 +28,14 @@ def add_grade(name, subject, score):
 
                 students[name][subject].append(score)
                 st.write(f"Updated Grade for {name}: {students[name]}")
-            else:
-                st.write("please enter a valid grade from 0 to 100 and do not leave blank")
-        else:
-            st.write("Subject doesn't exist or left blank")
-    else:
-        st.write("Student doesn't exist or input left blank")
+
 # A function where the user can remove a score
 def remove_score(name, subject, score):
     if name in students:
         if subject in students[name]:
             if score in students[name][subject]:
                 students[name][subject].remove(score)
-            else:
-                st.write("Score doesn't exist or wrong input")
-        else:
-            st.write("Subject doesn't exist or left blank")
-    else:
-        st.write("Name doesn't exist or left blank")
+
 # A function that saves the updated grades to json
 def save_grades():
     with open(FILE_NAME, "w") as file:
@@ -74,15 +64,11 @@ def get_average(name, subject):
             else:
                 st.write("Error")
 
-        else:
-            st.write("Wrong subject input or left blank")
-    else:
-        st.write("Wrong student input or left blank")
+
 def display_score(student):
     if student in students:
         st.write(f"Here are the grades for {student} {students[student]}")
-    else:
-        st.write("Wrong input or left blank")
+
 
 def add_student(name, subjects):
     
@@ -98,8 +84,7 @@ def remove_student(student):
     if student in students:
         del students[student]
         st.write(f"Removed {student}")
-    else:
-        st.write("Student don't exist try again")
+
 
                 
 
